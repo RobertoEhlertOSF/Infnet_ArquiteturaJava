@@ -2,16 +2,34 @@ package br.edu.infnet.AppInstrumentos.model.domain;
 
 public class Violao extends Instrumento {
 	
-	public boolean isEletrico;
-	public int quantidadeCordas;
-	public String tipoCorda;
-	
-	public Violao(boolean isEletrico, int quantidadeCordas, String tipoCorda) {
+	private boolean isEletrico;
+	private int quantidadeCordas;
+	private String tipoCorda;
+		
+	public boolean isEletrico() {
+		return isEletrico;
+	}
+
+	public void setEletrico(boolean isEletrico) {
 		this.isEletrico = isEletrico;
+	}
+
+	public int getQuantidadeCordas() {
+		return quantidadeCordas;
+	}
+
+	public void setQuantidadeCordas(int quantidadeCordas) {
 		this.quantidadeCordas = quantidadeCordas;
+	}
+
+	public String getTipoCorda() {
+		return tipoCorda;
+	}
+
+	public void setTipoCorda(String tipoCorda) {
 		this.tipoCorda = tipoCorda;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Violão - " + isEletrico + ";" + quantidadeCordas + ";" + tipoCorda;
