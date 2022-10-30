@@ -2,16 +2,20 @@ package br.edu.infnet.AppInstrumentos;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 
 import br.edu.infnet.AppInstrumentos.model.domain.Atabaque;
 import br.edu.infnet.AppInstrumentos.model.domain.Bateria;
 import br.edu.infnet.AppInstrumentos.model.domain.Violao;
 
+@Order(3)
+@Component
 public class InstrumentoTeste implements ApplicationRunner{
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		System.out.println("## Cadastramento de Pedidos ##");
+		System.out.println("## Cadastramento de Instrumentos ##");
 		
 		Bateria bateria = new Bateria();
 		bateria.setQuantidadePratos(2);

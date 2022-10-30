@@ -2,12 +2,19 @@ package br.edu.infnet.AppInstrumentos;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
 import br.edu.infnet.AppInstrumentos.model.domain.Atabaque;
 
+@Order(4)
+@Component
 public class AtabaqueTeste implements ApplicationRunner{
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		System.out.println("## Cadastro de Atabaques ##");
+
 		Atabaque t1 = new Atabaque();
 		t1.setOrigem("Ketu");
 		t1.setCouroArtificial(false);

@@ -8,9 +8,27 @@ public class Pedido {
 	private boolean entregaEmCasa;
 	private LocalDateTime data;
 	private String observacoes;
+	private Cliente cliente;
+	private List<Instrumento> instrumentos;
+	
+	public Pedido() {
+		this.data = LocalDateTime.now();
+		this.entregaEmCasa = true;
+	}
+	
+	public Pedido(Cliente cliente) {
+		this();
+		this.cliente = cliente;
+	}
 	
 	public boolean getEntregaEmCasa() {
 		return entregaEmCasa;
+	}
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 	public void setEntregaEmCasa(Boolean entregaEmCasa) {
 		this.entregaEmCasa = entregaEmCasa;
@@ -28,8 +46,16 @@ public class Pedido {
 		this.observacoes = observacoes;
 	}
 	
+	public List<Instrumento> getInstrumentos() {
+		return instrumentos;
+	}
+
+	public void setInstrumentos(List<Instrumento> instrumentos) {
+		this.instrumentos = instrumentos;
+	}
+	
 	@Override
 	public String toString() {
-		return observacoes + ";" + data + ";" + entregaEmCasa;
+		return observacoes + ";" + data + ";" + entregaEmCasa + ";" + cliente + ";" + instrumentos.size();
 	}
 }

@@ -2,13 +2,19 @@ package br.edu.infnet.AppInstrumentos;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 
 import br.edu.infnet.AppInstrumentos.model.domain.Violao;
 
+@Order(6)
+@Component
 public class ViolaoTeste implements ApplicationRunner{
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		System.out.println("## Cadastro de Violões ##");
+
 		Violao v1 = new Violao();
 		v1.setEletrico(false);
 		v1.setQuantidadeCordas(6);
@@ -34,8 +40,6 @@ public class ViolaoTeste implements ApplicationRunner{
 		v3.setValor(7700.00);
 		v3.setIsImportado(true);
 		v3.setFabricante("Rozini");
-		System.out.println(v3);
-		
+		System.out.println(v3);	
 	}
-
 }
