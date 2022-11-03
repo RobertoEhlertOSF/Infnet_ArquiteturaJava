@@ -1,20 +1,15 @@
 package br.edu.infnet.AppInstrumentos.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import br.edu.infnet.AppInstrumentos.model.domain.Atabaque;
 import org.springframework.ui.Model;
 
 
 @Controller
-public class AtabaqueController {
-	
+public class AtabaqueController {	
 	
 	@GetMapping(value = "/atabaque/lista")
 	public String telaLista(Model model) {
@@ -49,7 +44,6 @@ public class AtabaqueController {
 		atabaques.add(t3);
 
 		model.addAttribute("listagem", atabaques);
-		
 		return "atabaque/lista";
 	}
 	

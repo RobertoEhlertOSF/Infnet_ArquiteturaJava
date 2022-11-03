@@ -15,7 +15,6 @@ public class InstrumentoTeste implements ApplicationRunner{
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		System.out.println("## Cadastramento de Instrumentos ##");
 		
 		Bateria bateria = new Bateria();
 		bateria.setQuantidadePratos(2);

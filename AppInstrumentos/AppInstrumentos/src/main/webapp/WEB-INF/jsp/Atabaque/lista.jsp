@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 	<title>Cadastro de Atabaques</title>
 </head>
 <body>
-	<div class="container mt-3">]
+	<div class="container mt-3">
 	  <h3>Atabaques: ${listagem.size()}</h3>
 	</div>
 </body>
