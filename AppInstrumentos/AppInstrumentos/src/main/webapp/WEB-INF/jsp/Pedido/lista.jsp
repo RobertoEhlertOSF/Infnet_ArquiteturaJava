@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="container mt-3">]
-		<h3>Pedido</h3>
+		<h3>Pedidos:  ${listagem.size()</h3>
 	</div>
 </body>
 </html>

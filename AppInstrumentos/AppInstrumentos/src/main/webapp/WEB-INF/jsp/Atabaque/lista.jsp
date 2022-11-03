@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container mt-3">]
-		<h3>Atabaques</h3>
+	  <h3>Atabaques: ${listagem.size()}</h3>
 	</div>
 </body>
 </html>
