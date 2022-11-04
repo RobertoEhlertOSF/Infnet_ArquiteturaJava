@@ -14,7 +14,7 @@ public class Bateria extends Instrumento {
 		this.modelo = modelo;
 	}
 
-	public boolean isEletronica() {
+	public boolean getIsEletronica() {
 		return isEletronica;
 	}
 

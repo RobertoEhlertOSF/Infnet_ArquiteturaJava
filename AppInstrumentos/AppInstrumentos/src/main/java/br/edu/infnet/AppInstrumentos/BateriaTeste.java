@@ -5,6 +5,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.AppInstrumentos.controller.BateriaController;
 import br.edu.infnet.AppInstrumentos.model.domain.Bateria;
 
 @Order(5)
@@ -23,6 +24,8 @@ public class BateriaTeste implements ApplicationRunner {
 		b1.setIsImportado(true);
 		b1.setFabricante("Shelter");
 		System.out.println(b1);
+		BateriaController.adicionar(b1);
+
 		
 		Bateria b2 = new Bateria();
 		b2.setEletronica(true);
@@ -32,6 +35,7 @@ public class BateriaTeste implements ApplicationRunner {
 		b2.setFabricante("Yahama");
 		b2.setValor(6499.99);
 		System.out.println(b2);
+		BateriaController.adicionar(b2);
 
 		Bateria b3 = new Bateria();
 		b3.setEletronica(true);
@@ -41,6 +45,8 @@ public class BateriaTeste implements ApplicationRunner {
 		b3.setFabricante("Action");
 		b3.setValor(7000.00);
 		System.out.println(b3);
+		BateriaController.adicionar(b3);
+
 	}
 
 }

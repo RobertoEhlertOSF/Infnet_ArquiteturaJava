@@ -3,28 +3,20 @@ package br.edu.infnet.AppInstrumentos.model.domain;
 public class Atabaque extends Instrumento{
 
 	private Integer quantidadeGanchos;
-	private boolean isCouroArtificial;
+	private Boolean isCouroArtificial;
 	private String origem;
 
-	
 	public Integer getQuantidadeGanchos() {
 		return quantidadeGanchos;
 	}
-
-
-
 	public void setQuantidadeGanchos(Integer quantidadeGanchos) {
 		this.quantidadeGanchos = quantidadeGanchos;
 	}
 
-
-
-	public boolean isCouroArtificial() {
+	public boolean getisCouroArtificial() {
 		return isCouroArtificial;
 	}
-
-
-
+	
 	public void setCouroArtificial(boolean isCouroArtificial) {
 		this.isCouroArtificial = isCouroArtificial;
 	}

@@ -5,8 +5,9 @@ public class Instrumento {
 	private Double valor;
 	private String fabricante;
 	private Boolean isImportado;
+	private int id;
 	
-	private Double getValor() {
+	public Double getValor() {
 		return valor;
 	}
 	public void setValor(Double valor) {
@@ -24,6 +25,15 @@ public class Instrumento {
 	public void setIsImportado(Boolean isImportado) {
 		this.isImportado = isImportado;
 	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getId() {
+		return id;
+	}
 	
-	
+	@Override
+	public String toString() {
+		return id + ";" + valor + ";" + fabricante + ";" + isImportado;
+	}
 }

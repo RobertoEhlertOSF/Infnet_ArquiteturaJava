@@ -9,8 +9,8 @@
 	<title>Cadastro de Violões</title>
 </head>
 <body>
-	<div class="container mt-3">]
-		<h3>Violões:  ${listagem.size()</h3>
+	<div class="container mt-3">
+		<h3>Violões:  ${listagem.size()}</h3>
 	</div>
 </body>
 </html>

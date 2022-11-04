@@ -1,9 +1,13 @@
 package br.edu.infnet.AppInstrumentos.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 import br.edu.infnet.AppInstrumentos.model.domain.Atabaque;
 import org.springframework.ui.Model;
 
@@ -11,43 +15,32 @@ import org.springframework.ui.Model;
 @Controller
 public class AtabaqueController {	
 	
+	private static Integer id = 1;
+	private static Map<Integer, Atabaque> mapaAtabaques = new HashMap<Integer, Atabaque>();
+	
 	@GetMapping(value = "/atabaque/lista")
 	public String telaLista(Model model) {
-		
-		Atabaque t1 = new Atabaque();
-		t1.setOrigem("Ketu");
-		t1.setCouroArtificial(false);
-		t1.setQuantidadeGanchos(4);
-		t1.setValor(399.99);
-		t1.setIsImportado(false);
-		t1.setFabricante("Jair");
-		
-		Atabaque t2 = new Atabaque();
-		t2.setOrigem("Angola");
-		t2.setCouroArtificial(true);
-		t2.setQuantidadeGanchos(4);
-		t2.setValor(600.00);
-		t2.setIsImportado(false);
-		t2.setFabricante("Jair");
-		
-		Atabaque t3 = new Atabaque();
-		t3.setOrigem("Bantu");
-		t3.setCouroArtificial(false);
-		t3.setQuantidadeGanchos(5);
-		t3.setValor(999.99);
-		t3.setIsImportado(true);
-		t3.setFabricante("Gope");
-		
-		List<Atabaque> atabaques = new ArrayList<Atabaque>();
-		atabaques.add(t1);
-		atabaques.add(t2);
-		atabaques.add(t3);
-
-		model.addAttribute("listagem", atabaques);
+		model.addAttribute("listagem", getLista());
 		return "atabaque/lista";
 	}
 	
-	public void adicionar(Atabaque atabaque) {
-		
+	@GetMapping(value = "/atabaque/{id}/excluir")
+	public String telaExcluir(@PathVariable int id) {
+		excluir(id);
+		return "redirect:/atabaque/lista";
 	}
+	
+	public static Collection<Atabaque> getLista(){
+		return mapaAtabaques.values();
+	}
+	
+	public static void adicionar(Atabaque atabaque) {
+		atabaque.setId(id++);
+		mapaAtabaques.put(atabaque.getId(), atabaque);
+	}
+	
+	public static void excluir(int id) {
+		mapaAtabaques.remove(id);
+	}
+	
 }
