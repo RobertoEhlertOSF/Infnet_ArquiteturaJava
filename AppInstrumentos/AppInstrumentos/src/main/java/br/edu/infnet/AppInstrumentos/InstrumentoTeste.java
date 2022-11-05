@@ -5,6 +5,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.AppInstrumentos.controller.InstrumentoController;
 import br.edu.infnet.AppInstrumentos.model.domain.Atabaque;
 import br.edu.infnet.AppInstrumentos.model.domain.Bateria;
 import br.edu.infnet.AppInstrumentos.model.domain.Violao;
@@ -15,7 +16,8 @@ public class InstrumentoTeste implements ApplicationRunner{
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		
+		System.out.println("## Cadastro de Instrumentos ##");
+			
 		Bateria bateria = new Bateria();
 		bateria.setQuantidadePratos(2);
 		bateria.setEletronica(true);
@@ -23,6 +25,7 @@ public class InstrumentoTeste implements ApplicationRunner{
 		bateria.setValor(3000.00);
 		bateria.setFabricante("Yamaha");
 		bateria.setIsImportado(false);
+		InstrumentoController.adicionar(bateria);
 
 		Atabaque atabaque = new Atabaque();		
 		atabaque.setOrigem("Ketu");
@@ -31,6 +34,7 @@ public class InstrumentoTeste implements ApplicationRunner{
 		atabaque.setValor(399.99);
 		atabaque.setIsImportado(false);
 		atabaque.setFabricante("Jair");
+		InstrumentoController.adicionar(atabaque);
 
 		Violao violao = new Violao();		
 		violao.setEletrico(true);
@@ -39,8 +43,6 @@ public class InstrumentoTeste implements ApplicationRunner{
 		violao.setValor(7700.00);
 		violao.setIsImportado(true);
 		violao.setFabricante("Rozini");
-		
+		InstrumentoController.adicionar(violao);		
 	}
-
-
 }

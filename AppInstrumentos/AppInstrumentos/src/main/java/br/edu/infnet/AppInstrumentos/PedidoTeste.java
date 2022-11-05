@@ -9,6 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.AppInstrumentos.controller.PedidoController;
 import br.edu.infnet.AppInstrumentos.model.domain.Atabaque;
 import br.edu.infnet.AppInstrumentos.model.domain.Bateria;
 import br.edu.infnet.AppInstrumentos.model.domain.Cliente;
@@ -33,6 +34,7 @@ public class PedidoTeste implements ApplicationRunner {
 		p1.setCliente(c1);
 		p1.setInstrumentos(instrumentos1);
 		System.out.println(p1);
+		PedidoController.adicionar(p1);
 
 		Cliente c2 = new Cliente("22222222222", "professor@escola.com", "Professorson");
 		Pedido p2 = new Pedido(c2);
@@ -43,6 +45,7 @@ public class PedidoTeste implements ApplicationRunner {
 		p2.setEntregaEmCasa(false);
 		p2.setInstrumentos(instrumentos2);		
 		System.out.println(p2);
+		PedidoController.adicionar(p2);
 
 		Cliente c3 = new Cliente("3333333333", "diretor@escola.com", "Pelton");
 		List<Instrumento> instrumentos3 = listaInstrumentosMock(3);
@@ -54,6 +57,7 @@ public class PedidoTeste implements ApplicationRunner {
 		p3.setEntregaEmCasa(true);
 		p3.setInstrumentos(instrumentos3);
 		System.out.println(p3);
+		PedidoController.adicionar(p3);
 	}
 	
 	private List<Instrumento> listaInstrumentosMock(int quantidadeInstrumentos){

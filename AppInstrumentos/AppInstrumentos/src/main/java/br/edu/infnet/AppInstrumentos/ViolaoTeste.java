@@ -5,6 +5,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.AppInstrumentos.controller.ViolaoController;
 import br.edu.infnet.AppInstrumentos.model.domain.Violao;
 
 @Order(6)
@@ -23,6 +24,7 @@ public class ViolaoTeste implements ApplicationRunner{
 		v1.setIsImportado(false);
 		v1.setFabricante("Fenix");
 		System.out.println(v1);
+		ViolaoController.adicionar(v1);
 		
 		Violao v2 = new Violao();
 		v2.setEletrico(true);
@@ -32,6 +34,7 @@ public class ViolaoTeste implements ApplicationRunner{
 		v2.setIsImportado(true);
 		v2.setFabricante("Giannini");
 		System.out.println(v2);
+		ViolaoController.adicionar(v2);
 		
 		Violao v3 = new Violao();
 		v3.setEletrico(true);
@@ -41,5 +44,6 @@ public class ViolaoTeste implements ApplicationRunner{
 		v3.setIsImportado(true);
 		v3.setFabricante("Rozini");
 		System.out.println(v3);	
+		ViolaoController.adicionar(v3);
 	}
 }

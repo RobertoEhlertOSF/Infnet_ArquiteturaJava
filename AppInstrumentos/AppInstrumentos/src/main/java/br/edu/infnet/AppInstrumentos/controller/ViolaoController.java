@@ -1,32 +1,43 @@
 package br.edu.infnet.AppInstrumentos.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PathVariable;
 import br.edu.infnet.AppInstrumentos.model.domain.Violao;
 
 @Controller
 public class ViolaoController {
 	
+	private static Integer id = 1;
+	private static Map<Integer, Violao> mapaVioloes = new HashMap<Integer, Violao>();
+	
 	@GetMapping(value = "/violao/lista")
 	public String telaLista(Model model) {
-		
-		Violao v1 = new Violao();
-		v1.setEletrico(false);
-		v1.setQuantidadeCordas(6);
-		v1.setTipoCorda("Nylon");
-		v1.setValor(399.99);
-		v1.setIsImportado(false);
-		v1.setFabricante("Fenix");
-		
-		List<Violao> violoes = new ArrayList();
-		violoes.add(v1);
-		
-		model.addAttribute("listagem", violoes);
+		model.addAttribute("listagem", getLista());
 		return "violao/lista";
+	}
+	
+	@GetMapping(value = "/violao/{id}/excluir")
+	public String telaExcluir(@PathVariable int id) {
+		excluir(id);
+		return "redirect:/violao/lista";
+	}
+	
+	public static Collection<Violao> getLista(){
+		return mapaVioloes.values();
+	}
+	
+	public static void adicionar(Violao violao) {
+		violao.setId(id++);
+		mapaVioloes.put(violao.getId(), violao);
+	}
+	
+	public static void excluir(int id) {
+		mapaVioloes.remove(id);
 	}
 }

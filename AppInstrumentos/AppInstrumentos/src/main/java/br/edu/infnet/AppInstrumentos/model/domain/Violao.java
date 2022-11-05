@@ -5,8 +5,17 @@ public class Violao extends Instrumento {
 	private boolean isEletrico;
 	private int quantidadeCordas;
 	private String tipoCorda;
-		
-	public boolean isEletrico() {
+	private int id;
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public boolean getIsEletrico() {
 		return isEletrico;
 	}
 

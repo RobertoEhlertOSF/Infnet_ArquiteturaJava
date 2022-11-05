@@ -1,32 +1,47 @@
 package br.edu.infnet.AppInstrumentos.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import br.edu.infnet.AppInstrumentos.model.domain.Cliente;
 
 @Controller
 public class ClienteController {
 	
+	private static Integer id = 1;
+	private static Map<Integer, Cliente> mapaClientes = new HashMap<Integer, Cliente>();
+	
 	@GetMapping(value = "/cliente/lista")
 	public String telaLista(Model model) {
-		
-		Cliente c1 = new Cliente("11111111111", "roberto@aluno.com", "roberto");	
-		Cliente c2 = new Cliente("22222222222", "professor@escola.com", "Professorson");
-		Cliente c3 = new Cliente("3333333333", "diretor@escola.com", "Pelton");
-		
-		List<Cliente> clientes = new ArrayList();
-		clientes.add(c1);
-		clientes.add(c2);
-		clientes.add(c3);
-		
-		model.addAttribute("listagem", clientes);
-		
-		
+				
+		model.addAttribute("listagem", getLista());
 		return "cliente/lista";
 	}
+	
+	@GetMapping(value = "/cliente/{id}/excluir")
+	public String telaExcluir(@PathVariable int id) {
+		excluir(id);
+		return "redirect:/cliente/lista";
+	}
+	
+	public static Collection<Cliente> getLista(){
+		return mapaClientes.values();
+	}
+	
+	public static void adicionar(Cliente cliente) {
+		cliente.setId(id++);
+		mapaClientes.put(cliente.getId(), cliente);
+	}
+	
+	public static void excluir(int id) {
+		mapaClientes.remove(id);
+	}
+	
+	
 }

@@ -10,7 +10,8 @@ public class Pedido {
 	private String observacoes;
 	private Cliente cliente;
 	private List<Instrumento> instrumentos;
-	
+	private int id;
+		
 	public Pedido() {
 		this.data = LocalDateTime.now();
 		this.entregaEmCasa = true;
@@ -19,6 +20,14 @@ public class Pedido {
 	public Pedido(Cliente cliente) {
 		this();
 		this.cliente = cliente;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public boolean getEntregaEmCasa() {

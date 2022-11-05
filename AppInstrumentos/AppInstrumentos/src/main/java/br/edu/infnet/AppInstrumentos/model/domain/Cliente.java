@@ -4,11 +4,20 @@ public class Cliente {
 	private String nome;
 	private String cpf;
 	private String email;
+	private int id;
 	
 	public Cliente(String cpf, String email, String nome) {
 		this.cpf = cpf;
 		this.email = email;
 		this.nome = nome;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	@Override
