@@ -1,16 +1,20 @@
 package br.edu.infnet.AppInstrumentos;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.AppInstrumentos.controller.AtabaqueController;
 import br.edu.infnet.AppInstrumentos.model.domain.Atabaque;
+import br.edu.infnet.AppInstrumentos.service.AtabaqueService;
 
 @Order(4)
 @Component
 public class AtabaqueTeste implements ApplicationRunner{
+	
+	@Autowired
+	private AtabaqueService atabaqueService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -24,7 +28,7 @@ public class AtabaqueTeste implements ApplicationRunner{
 		t1.setIsImportado(false);
 		t1.setFabricante("Jair");
 		System.out.println(t1);
-		AtabaqueController.adicionar(t1);
+		atabaqueService.adicionar(t1);
 		
 		Atabaque t2 = new Atabaque();
 		t2.setOrigem("Angola");
@@ -34,7 +38,7 @@ public class AtabaqueTeste implements ApplicationRunner{
 		t2.setIsImportado(false);
 		t2.setFabricante("Jair");
 		System.out.println(t2);
-		AtabaqueController.adicionar(t2);
+		atabaqueService.adicionar(t2);
 		
 		Atabaque t3 = new Atabaque();
 		t3.setOrigem("Bantu");
@@ -44,6 +48,6 @@ public class AtabaqueTeste implements ApplicationRunner{
 		t3.setIsImportado(true);
 		t3.setFabricante("Gope");
 		System.out.println(t3);
-		AtabaqueController.adicionar(t3);		
+		atabaqueService.adicionar(t3);		
 	}
 }

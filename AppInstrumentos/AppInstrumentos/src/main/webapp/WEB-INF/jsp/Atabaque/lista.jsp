@@ -18,6 +18,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>Id</th>				
 					<th>Origem</th>
 					<th>Couro Artificial</th>
 					<th>Qtd Ganchos</th>

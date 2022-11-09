@@ -1,5 +1,10 @@
 package br.edu.infnet.AppInstrumentos.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name= "tBateria")
 public class Bateria extends Instrumento {
 	
 	private String modelo;

@@ -1,16 +1,20 @@
 package br.edu.infnet.AppInstrumentos;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.AppInstrumentos.controller.BateriaController;
 import br.edu.infnet.AppInstrumentos.model.domain.Bateria;
+import br.edu.infnet.AppInstrumentos.service.BateriaService;
 
 @Order(5)
 @Component
 public class BateriaTeste implements ApplicationRunner {
+	
+	@Autowired
+	private BateriaService bateriaService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -24,8 +28,7 @@ public class BateriaTeste implements ApplicationRunner {
 		b1.setIsImportado(true);
 		b1.setFabricante("Shelter");
 		System.out.println(b1);
-		BateriaController.adicionar(b1);
-
+		bateriaService.adicionar(b1);
 		
 		Bateria b2 = new Bateria();
 		b2.setEletronica(true);
@@ -35,7 +38,7 @@ public class BateriaTeste implements ApplicationRunner {
 		b2.setFabricante("Yahama");
 		b2.setValor(6499.99);
 		System.out.println(b2);
-		BateriaController.adicionar(b2);
+		bateriaService.adicionar(b2);
 
 		Bateria b3 = new Bateria();
 		b3.setEletronica(true);
@@ -45,8 +48,6 @@ public class BateriaTeste implements ApplicationRunner {
 		b3.setFabricante("Action");
 		b3.setValor(7000.00);
 		System.out.println(b3);
-		BateriaController.adicionar(b3);
-
+		bateriaService.adicionar(b3);
 	}
-
 }

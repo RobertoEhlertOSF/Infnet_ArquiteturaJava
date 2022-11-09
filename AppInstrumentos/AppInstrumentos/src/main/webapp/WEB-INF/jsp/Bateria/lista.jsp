@@ -19,6 +19,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>Id</th>				
 					<th>É Eletrônica</th>
 					<th>Modelo</th>
 					<th>Qtd Pratos</th>

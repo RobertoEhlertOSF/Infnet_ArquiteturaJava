@@ -16,6 +16,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>Id</th>
 					<th>isEletrico</th>
 					<th>quantidadeCordas</th>
 					<th>tipoCorda</th>

@@ -1,16 +1,20 @@
 package br.edu.infnet.AppInstrumentos;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.AppInstrumentos.controller.ViolaoController;
 import br.edu.infnet.AppInstrumentos.model.domain.Violao;
+import br.edu.infnet.AppInstrumentos.service.ViolaoService;
 
 @Order(6)
 @Component
 public class ViolaoTeste implements ApplicationRunner{
+	
+	@Autowired
+	private ViolaoService violaoService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -24,7 +28,7 @@ public class ViolaoTeste implements ApplicationRunner{
 		v1.setIsImportado(false);
 		v1.setFabricante("Fenix");
 		System.out.println(v1);
-		ViolaoController.adicionar(v1);
+		violaoService.adicionar(v1);
 		
 		Violao v2 = new Violao();
 		v2.setEletrico(true);
@@ -34,7 +38,7 @@ public class ViolaoTeste implements ApplicationRunner{
 		v2.setIsImportado(true);
 		v2.setFabricante("Giannini");
 		System.out.println(v2);
-		ViolaoController.adicionar(v2);
+		violaoService.adicionar(v2);
 		
 		Violao v3 = new Violao();
 		v3.setEletrico(true);
@@ -44,6 +48,6 @@ public class ViolaoTeste implements ApplicationRunner{
 		v3.setIsImportado(true);
 		v3.setFabricante("Rozini");
 		System.out.println(v3);	
-		ViolaoController.adicionar(v3);
+		violaoService.adicionar(v3);
 	}
 }

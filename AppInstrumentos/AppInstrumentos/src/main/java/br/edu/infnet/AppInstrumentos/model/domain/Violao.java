@@ -1,5 +1,10 @@
 package br.edu.infnet.AppInstrumentos.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tViolao")
 public class Violao extends Instrumento {
 	
 	private boolean isEletrico;

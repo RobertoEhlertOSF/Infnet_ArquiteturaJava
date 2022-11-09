@@ -3,6 +3,14 @@ package br.edu.infnet.AppInstrumentos.model.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tPedido")
 public class Pedido {
 	
 	private boolean entregaEmCasa;
@@ -10,6 +18,8 @@ public class Pedido {
 	private String observacoes;
 	private Cliente cliente;
 	private List<Instrumento> instrumentos;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 		
 	public Pedido() {

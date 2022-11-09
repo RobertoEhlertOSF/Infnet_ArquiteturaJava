@@ -17,6 +17,31 @@
 <body>
 	<div class="container mt-3">
 		<h3>Pedidos:  ${listagem.size()}</h3>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>				
+					<th>Observações</th>
+					<th>Data</th>
+					<th>Entrega em Casa</th>
+					<th>Nome Cliente</th>
+					<th>Quantidade Itens</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="p" items="${listagem}">		
+					<tr>
+						<td>${p.id}</td>
+						<td>${p.observacoes}</td>
+						<td>${p.data}</td>
+						<td>${p.entregaEmCasa}</td>
+						<td>${p.cliente.nome}</td>
+						<td>${p.instrumentos.size()}</td>
+						<td><a href="/pedido/${p.id}/excluir">Excluir</a></td>						
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 	</div>
 </body>
 </html>

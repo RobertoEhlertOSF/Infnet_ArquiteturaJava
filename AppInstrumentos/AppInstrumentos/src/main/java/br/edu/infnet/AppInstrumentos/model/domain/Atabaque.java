@@ -1,6 +1,11 @@
 package br.edu.infnet.AppInstrumentos.model.domain;
 
-public class Atabaque extends Instrumento{
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tAtabaque")
+public class Atabaque extends Instrumento {
 
 	private Integer quantidadeGanchos;
 	private Boolean isCouroArtificial;
@@ -21,19 +26,13 @@ public class Atabaque extends Instrumento{
 		this.isCouroArtificial = isCouroArtificial;
 	}
 
-
-
 	public String getOrigem() {
 		return origem;
 	}
 
-
-
 	public void setOrigem(String origem) {
 		this.origem = origem;
 	}
-
-
 
 	@Override
 	public String toString() {
