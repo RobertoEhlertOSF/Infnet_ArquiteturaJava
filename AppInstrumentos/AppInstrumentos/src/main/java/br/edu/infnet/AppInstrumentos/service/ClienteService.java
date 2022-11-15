@@ -1,27 +1,24 @@
 package br.edu.infnet.AppInstrumentos.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import br.edu.AppInstrumentos.model.repository.ClienteRepository;
 import br.edu.infnet.AppInstrumentos.model.domain.Cliente;
 
 public class ClienteService {	
 	
-	private static Integer id = 1;
-	private static Map<Integer, Cliente> mapaClientes = new HashMap<Integer, Cliente>();
+	ClienteRepository clienteRepository;
 	
 	public Collection<Cliente> getLista(){
-		return mapaClientes.values();
+		return (Collection<Cliente>) clienteRepository.findAll();
 	}
 	
 	public void adicionar(Cliente cliente) {
-		cliente.setId(id++);
-		mapaClientes.put(cliente.getId(), cliente);
+		clienteRepository.save(cliente);
 	}
 	
 	public void excluir(int id) {
-		mapaClientes.remove(id);
+		clienteRepository.deleteById(id);
 	}
 
 }

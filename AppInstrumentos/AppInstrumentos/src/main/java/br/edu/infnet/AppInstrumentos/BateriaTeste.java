@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.AppInstrumentos.model.domain.Bateria;
 import br.edu.infnet.AppInstrumentos.service.BateriaService;
 
-@Order(5)
+@Order(6)
 @Component
 public class BateriaTeste implements ApplicationRunner {
 	

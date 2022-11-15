@@ -1,30 +1,26 @@
 package br.edu.infnet.AppInstrumentos.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.stereotype.Service;
 
+import br.edu.AppInstrumentos.model.repository.BateriaRepository;
 import br.edu.infnet.AppInstrumentos.model.domain.Bateria;
 
 @Service
 public class BateriaService {
 	
-	private static Map<Integer, Bateria> mapaBaterias = new HashMap<Integer, Bateria>();
-	private static Integer id = 1;
+	BateriaRepository bateriaRepository;
 	
 	public Collection<Bateria> getLista(){
-		return mapaBaterias.values();
+		return (Collection<Bateria>) bateriaRepository.findAll();
 	}
 	
 	public void adicionar(Bateria bateria) {
-		bateria.setId(id++);
-		mapaBaterias.put(bateria.getId(), bateria);
+		bateriaRepository.save(bateria);
 	}
 	
 	public void excluir(int id) {
-		mapaBaterias.remove(id);
+		bateriaRepository.deleteById(id);
 	}
 
 }

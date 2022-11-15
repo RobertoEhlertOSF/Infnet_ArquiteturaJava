@@ -11,7 +11,7 @@ import br.edu.infnet.AppInstrumentos.model.domain.Bateria;
 import br.edu.infnet.AppInstrumentos.model.domain.Violao;
 import br.edu.infnet.AppInstrumentos.service.InstrumentoService;
 
-@Order(3)
+@Order(4)
 @Component
 public class InstrumentoTeste implements ApplicationRunner{
 	

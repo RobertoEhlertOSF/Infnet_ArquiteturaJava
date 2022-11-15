@@ -7,9 +7,10 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.AppInstrumentos.model.domain.Cliente;
+import br.edu.infnet.AppInstrumentos.model.domain.Usuario;
 import br.edu.infnet.AppInstrumentos.service.ClienteService;
 
-@Order(2)
+@Order(3)
 @Component
 public class ClienteTeste implements ApplicationRunner {
 	
@@ -19,6 +20,9 @@ public class ClienteTeste implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("## Cadastro de Clientes ##");
+		
+		Usuario us = new Usuario();
+		us.setId(1);
 
 		Cliente c1 = new Cliente("11111111111", "roberto@aluno.com", "roberto");		
 		System.out.println(c1);

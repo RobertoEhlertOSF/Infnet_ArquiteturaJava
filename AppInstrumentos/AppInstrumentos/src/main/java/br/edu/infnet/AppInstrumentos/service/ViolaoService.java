@@ -1,27 +1,26 @@
 package br.edu.infnet.AppInstrumentos.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.stereotype.Service;
 
+import br.edu.AppInstrumentos.model.repository.ViolaoRepository;
 import br.edu.infnet.AppInstrumentos.model.domain.Violao;
 
+@Service
 public class ViolaoService {
-	
-	private static Integer id = 1;
-	private static Map<Integer, Violao> mapaVioloes = new HashMap<Integer, Violao>();
+
+	ViolaoRepository violaoRepository;
 	
 	public Collection<Violao> getLista(){
-		return mapaVioloes.values();
+		return (Collection<Violao>) violaoRepository.findAll();
 	}
 	
 	public void adicionar(Violao violao) {
-		violao.setId(id++);
-		mapaVioloes.put(violao.getId(), violao);
+		violaoRepository.save(violao);
 	}
 	
 	public void excluir(int id) {
-		mapaVioloes.remove(id);
+		violaoRepository.deleteById(id);
 	}
 
 }

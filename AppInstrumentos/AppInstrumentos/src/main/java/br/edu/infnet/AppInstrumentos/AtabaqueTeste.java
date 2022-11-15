@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.AppInstrumentos.model.domain.Atabaque;
 import br.edu.infnet.AppInstrumentos.service.AtabaqueService;
 
-@Order(4)
+@Order(5)
 @Component
 public class AtabaqueTeste implements ApplicationRunner{
 	

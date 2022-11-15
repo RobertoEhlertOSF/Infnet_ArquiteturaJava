@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,13 +13,15 @@
 <title>Cadastro de Baterias</title>
 </head>
 <body>
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
+
 	<div class="container mt-3">
 		<h3>Baterias: ${listagem.size()}</h3>
 
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Id</th>				
+					<th>Id</th>
 					<th>É Eletrônica</th>
 					<th>Modelo</th>
 					<th>Qtd Pratos</th>
@@ -30,7 +32,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="b" items="${listagem}">		
+				<c:forEach var="b" items="${listagem}">
 					<tr>
 						<td>${b.id}</td>
 						<td>${b.isEletronica}</td>
@@ -39,7 +41,7 @@
 						<td>${b.valor}</td>
 						<td>${b.isImportado}</td>
 						<td>${b.fabricante}</td>
-						<td><a href="/bateria/${b.id}/excluir">Excluir</a></td>						
+						<td><a href="/bateria/${b.id}/excluir">Excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

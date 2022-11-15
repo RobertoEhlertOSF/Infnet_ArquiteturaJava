@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.AppInstrumentos.model.domain.Violao;
 import br.edu.infnet.AppInstrumentos.service.ViolaoService;
 
-@Order(6)
+@Order(7)
 @Component
 public class ViolaoTeste implements ApplicationRunner{
 	
