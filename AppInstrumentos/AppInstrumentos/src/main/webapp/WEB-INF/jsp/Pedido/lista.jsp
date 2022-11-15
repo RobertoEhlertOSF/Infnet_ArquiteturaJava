@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,15 +12,17 @@
 	rel="stylesheet">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-	<title>Cadastro de Pedidos</title>
+<title>Cadastro de Pedidos</title>
 </head>
 <body>
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
+
 	<div class="container mt-3">
-		<h3>Pedidos:  ${listagem.size()}</h3>
+		<h3>Pedidos: ${listagem.size()}</h3>
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Id</th>				
+					<th>Id</th>
 					<th>Observações</th>
 					<th>Data</th>
 					<th>Entrega em Casa</th>
@@ -29,7 +31,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="p" items="${listagem}">		
+				<c:forEach var="p" items="${listagem}">
 					<tr>
 						<td>${p.id}</td>
 						<td>${p.observacoes}</td>
@@ -37,7 +39,7 @@
 						<td>${p.entregaEmCasa}</td>
 						<td>${p.cliente.nome}</td>
 						<td>${p.instrumentos.size()}</td>
-						<td><a href="/pedido/${p.id}/excluir">Excluir</a></td>						
+						<td><a href="/pedido/${p.id}/excluir">Excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

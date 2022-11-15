@@ -13,12 +13,14 @@
 <title>Cadastro de Atabaques</title>
 </head>
 <body>
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
+
 	<div class="container mt-3">
 		<h3>Atabaques: ${listagem.size()}</h3>
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Id</th>				
+					<th>Id</th>
 					<th>Origem</th>
 					<th>Couro Artificial</th>
 					<th>Qtd Ganchos</th>

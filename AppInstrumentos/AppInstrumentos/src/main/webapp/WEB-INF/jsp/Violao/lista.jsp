@@ -11,6 +11,7 @@
 	<title>Cadastro de Violões</title>
 </head>
 <body>
+	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<div class="container mt-3">
 		<h3>Violões: ${listagem.size()}</h3>
 		<table class="table table-striped">

@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,20 +14,6 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
-	<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-		<div class="container-fluid">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link active" href="#">AppInstrumentos</a></li>
-				<li class="nav-item"><a class="nav-link" href="/pedido/lista">Pedidos</a></li>
-				<li class="nav-item"><a class="nav-link" href="/instrumento/lista">Instrumentos</a></li>
-				<li class="nav-item"><a class="nav-link" href="/cliente/lista">Clientes</a></li>
-				<li class="nav-item"><a class="nav-link" href="/atabaque/lista">Atabaques</a></li>
-				<li class="nav-item"><a class="nav-link" href="/bateria/lista">Baterias</a></li>
-				<li class="nav-item"><a class="nav-link" href="/violao/lista">Violões</a></li>
-			</ul>
-		</div>
-	</nav>
-
+	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 </body>
 </html>

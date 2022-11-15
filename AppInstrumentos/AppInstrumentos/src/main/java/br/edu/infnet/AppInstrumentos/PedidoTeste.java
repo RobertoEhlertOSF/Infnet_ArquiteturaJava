@@ -18,7 +18,7 @@ import br.edu.infnet.AppInstrumentos.model.domain.Violao;
 import br.edu.infnet.AppInstrumentos.service.PedidoService;
 import br.edu.infnet.AppInstrumentos.model.domain.Instrumento;
 
-@Order(1)
+@Order(2)
 @Component
 public class PedidoTeste implements ApplicationRunner {
 	
