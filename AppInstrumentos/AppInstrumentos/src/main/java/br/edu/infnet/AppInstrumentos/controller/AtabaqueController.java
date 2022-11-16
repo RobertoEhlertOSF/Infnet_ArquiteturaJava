@@ -24,9 +24,9 @@ public class AtabaqueController {
 		return "atabaque/lista";
 	}
 	
-	@GetMapping(value = "/violao")
+	@GetMapping(value = "/atabaque")
 	public String telaCadastro() {
-		return "violao/cadastro";
+		return "atabaque/cadastro";
 	}
 	
 	@PostMapping(value = "/atabaque/adicionar")

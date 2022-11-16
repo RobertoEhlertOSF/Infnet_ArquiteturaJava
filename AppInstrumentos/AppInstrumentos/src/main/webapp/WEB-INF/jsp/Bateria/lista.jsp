@@ -17,7 +17,9 @@
 
 	<div class="container mt-3">
 		<h3>Baterias: ${listagem.size()}</h3>
-
+		<h4>
+			<a href="/bateria">Nova Bateria</a>
+		</h4>
 		<table class="table table-striped">
 			<thead>
 				<tr>

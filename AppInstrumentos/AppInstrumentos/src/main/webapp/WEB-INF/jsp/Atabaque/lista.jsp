@@ -17,6 +17,9 @@
 
 	<div class="container mt-3">
 		<h3>Atabaques: ${listagem.size()}</h3>
+		<h4>
+			<a href="/atabaque">Novo Atabaque</a>
+		</h4>
 		<table class="table table-striped">
 			<thead>
 				<tr>

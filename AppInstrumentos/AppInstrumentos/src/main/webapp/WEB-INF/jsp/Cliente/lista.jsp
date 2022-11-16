@@ -18,7 +18,7 @@
 	<div class="container mt-3">
 		<h3>Clientes: ${listagem.size()}</h3>
 		<h4>
-			<a href="cliente">Cadastrar Cliente</a>
+			<a href="/cliente">Cadastrar Cliente</a>
 		</h4>
 
 

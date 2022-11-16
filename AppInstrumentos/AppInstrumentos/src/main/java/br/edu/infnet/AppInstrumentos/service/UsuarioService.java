@@ -2,13 +2,18 @@ package br.edu.infnet.AppInstrumentos.service;
 
 import java.util.Collection;
 
+import org.springframework.beans.factory.annotation.Autowired;
 
 import br.edu.AppInstrumentos.model.repository.UsuarioRepository;
+import br.edu.infnet.AppInstrumentos.clients.IEnderecoClient;
+import br.edu.infnet.AppInstrumentos.model.domain.Endereco;
 import br.edu.infnet.AppInstrumentos.model.domain.Usuario;
 
 public class UsuarioService {	
-	
+	@Autowired
 	UsuarioRepository usuarioRepository;
+	@Autowired
+	private IEnderecoClient enderecoClient;
 		
 	public Collection<Usuario> getLista(){
 		return (Collection<Usuario>) usuarioRepository.findAll();
@@ -31,6 +36,10 @@ public class UsuarioService {
 		}
 		
 		return null;
+	}
+	
+	public Endereco obterCep(String cep) {
+		return enderecoClient.obterCep(cep);
 	}
 
 }
